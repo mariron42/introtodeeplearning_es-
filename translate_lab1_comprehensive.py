@@ -454,6 +454,63 @@ def get_comprehensive_translations():
         "tensors": "tensores",
         "True": "True",
         "False": "False",
+        
+        # ========== CRITICAL MISSING TRANSLATIONS ==========
+        
+        # Tensor shape and slicing
+        "As you have seen, the `shape` of a tensor provides the number of elements in each tensor dimension. The `shape` is quite useful, and we'll use it often. You can also use slicing to access subtensors within a higher-rank tensor:": "Como has visto, la `forma` de un tensor proporciona el número de elementos en cada dimensión del tensor. La `forma` es bastante útil, y la usaremos a menudo. También puedes usar slicing para acceder a subtensores dentro de un tensor de rango superior:",
+        "As you have seen, the ```shape``` of a Tensor provides the number of elements in each Tensor dimension. The ```shape``` is quite useful, and we'll use it often. You can also use slicing to access subtensors within a higher-rank Tensor:": "Como has visto, la ```forma``` de un Tensor proporciona el número de elementos en cada dimensión del Tensor. La ```forma``` es bastante útil, y la usaremos a menudo. También puedes usar slicing para acceder a subtensores dentro de un Tensor de rango superior:",
+        
+        # Computation graphs 
+        "A convenient way to think about and visualize computations in a machine learning framework like PyTorch is in terms of graphs. We can define this graph in terms of tensors, which hold data, and the mathematical operations that act on these tensors in some order. Let's look at a simple example, and define this computation using PyTorch:": "Una manera conveniente de pensar y visualizar los cálculos en un marco de aprendizaje automático como PyTorch es en términos de gráficos. Podemos definir este gráfico en términos de tensores, que contienen datos, y las operaciones matemáticas que actúan sobre estos tensores en algún orden. Veamos un ejemplo simple, y definamos este cálculo usando PyTorch:",
+        "A convenient way to think about and visualize computations in a machine learning framework like TensorFlow is in terms of graphs. We can define this graph in terms of Tensors, which hold data, and the mathematical operations that act on these Tensors in some order. Let's look at a simple example, and define this computation using TensorFlow:": "Una manera conveniente de pensar y visualizar los cálculos en un marco de aprendizaje automático como TensorFlow es en términos de gráficos. Podemos definir este gráfico en términos de Tensors, que contienen datos, y las operaciones matemáticas que actúan sobre estos Tensors en algún orden. Veamos un ejemplo simple, y definamos este cálculo usando TensorFlow:",
+        
+        # Graph operations
+        "Here, we take two inputs, `a, b`, and compute an output `e`. Each node in the graph represents an operation that takes some input, does some computation, and passes its output to another node.": "Aquí, tomamos dos entradas, `a, b`, y calculamos una salida `e`. Cada nodo en el gráfico representa una operación que toma alguna entrada, realiza algún cálculo y pasa su salida a otro nodo.",
+        
+        # Notice patterns for PyTorch
+        "Notice how we've created a computation graph consisting of PyTorch operations, and how the output is a tensor with value 76 -- we've just created a computation graph consisting of operations, and it's executed them and given us back the result.": "Observa cómo hemos creado un gráfico de cálculo que consiste en operaciones de PyTorch, y cómo la salida es un tensor con valor 76 -- acabamos de crear un gráfico de cálculo que consiste en operaciones, y las ha ejecutado y nos ha devuelto el resultado.",
+        "Notice how we've created a computation graph consisting of TensorFlow operations, and how  the output is a Tensor with value 76 -- we've just created a computation graph consisting of operations, and it's executed them and given us back the result.": "Observa cómo hemos creado un gráfico de cálculo que consiste en operaciones de TensorFlow, y cómo la salida es un Tensor con valor 76 -- acabamos de crear un gráfico de cálculo que consiste en operaciones, y las ha ejecutado y nos ha devuelto el resultado.",
+        
+        # Complex example
+        "Now let's consider a slightly more complicated example:": "Ahora consideremos un ejemplo un poco más complicado:",
+        
+        # Function definitions
+        "Let's define a simple function in PyTorch to construct this computation function:": "Definamos una función simple en PyTorch para construir esta función de cálculo:",
+        "Let's define a simple function in TensorFlow to construct this computation function:": "Definamos una función simple en TensorFlow para construir esta función de cálculo:",
+        
+        # Calling functions
+        "Now, we can call this function to execute the computation graph given some inputs `a,b`:": "Ahora, podemos llamar a esta función para ejecutar el gráfico de cálculo dadas algunas entradas `a,b`:",
+        
+        # Output description
+        "Notice how our output is a tensor with value defined by the output of the computation, and that the output has no shape as it is a single scalar value.": "Observa cómo nuestra salida es un tensor con valor definido por la salida del cálculo, y que la salida no tiene forma ya que es un único valor escalar.",
+        "Notice how our output is a Tensor with value defined by the output of the computation, and that the output has no shape as it is a single scalar value.": "Observa cómo nuestra salida es un Tensor con valor definido por la salida del cálculo, y que la salida no tiene forma ya que es un único valor escalar.",
+        
+        # Neural networks
+        "We can also define neural networks in PyTorch. PyTorch uses ``torch.nn.Module``, which serves as a base class for all neural network modules in PyTorch. Layers and models in PyTorch inherit from this class.": "También podemos definir redes neuronales en PyTorch. PyTorch usa ``torch.nn.Module``, que sirve como clase base para todos los módulos de redes neuronales en PyTorch. Las capas y modelos en PyTorch heredan de esta clase.",
+        "We can also define neural networks in TensorFlow. TensorFlow uses a high-level API called Keras that provides a powerful, intuitive framework for building and training deep learning models.": "También podemos definir redes neuronales en TensorFlow. TensorFlow usa una API de alto nivel llamada Keras que proporciona un marco poderoso e intuitivo para construir y entrenar modelos de aprendizaje profundo.",
+        
+        # Layers
+        "We will use `torch.nn.Module` to define layers -- the building blocks of neural networks. Layers implement common neural networks operations. In PyTorch, this class requires that you define a forward function, which describes the forward pass through the network.": "Usaremos `torch.nn.Module` para definir capas -- los bloques de construcción de las redes neuronales. Las capas implementan operaciones comunes de redes neuronales. En PyTorch, esta clase requiere que definas una función forward, que describe el paso hacia adelante a través de la red.",
+        "Tensors can flow through abstract types called ```Layers``` -- the building blocks of neural networks. ```Layers``` implement common neural networks operations.": "Los tensores pueden fluir a través de tipos abstractos llamados ```Capas``` -- los bloques de construcción de las redes neuronales. Las ```Capas``` implementan operaciones comunes de redes neuronales.",
+        
+        # Sequential and subclassing
+        "Now that we have learned how to define layers and models in PyTorch using both the Sequential API and subclassing `nn.Module`, we're ready to turn our attention to actually training these models!": "Ahora que hemos aprendido cómo definir capas y modelos en PyTorch usando tanto la API Sequential como heredando de `nn.Module`, ¡estamos listos para dirigir nuestra atención a entrenar realmente estos modelos!",
+        "Now that we have learned how to define `Layers` as well as neural networks in TensorFlow using both the `Sequential` and Subclassing APIs, we're ready to shift our focus to actually training models!": "Ahora que hemos aprendido cómo definir `Capas` así como redes neuronales en TensorFlow usando tanto la API `Sequential` como de Subclasificación, ¡estamos listos para cambiar nuestro enfoque a entrenar realmente modelos!",
+        
+        # Training
+        "In training neural networks, we use differentiation and stochastic gradient descent (SGD) to optimize a loss function. Now that we have a sense of how PyTorch supports automatic differentiation, let's put everything together to train a neural network!": "En el entrenamiento de redes neuronales, usamos diferenciación y descenso de gradiente estocástico (SGD) para optimizar una función de pérdida. Ahora que tenemos una idea de cómo PyTorch soporta la diferenciación automática, ¡juntemos todo para entrenar una red neuronal!",
+        "In training neural networks, we use differentiation and stochastic gradient descent (SGD) to optimize a loss function. Now that we have a sense of how `GradientTape` can be used to compute gradients, let's put everything together to train a neural network!": "En el entrenamiento de redes neuronales, usamos diferenciación y descenso de gradiente estocástico (SGD) para optimizar una función de pérdida. Ahora que tenemos una idea de cómo se puede usar `GradientTape` para calcular gradientes, ¡juntemos todo para entrenar una red neuronal!",
+        
+        # Final concepts
+        "Now, we have covered the fundamental concepts of PyTorch -- tensors, operations, neural networks, and automatic differentiation. Fire!!": "Ahora, hemos cubierto los conceptos fundamentales de PyTorch -- tensores, operaciones, redes neuronales y diferenciación automática. ¡¡Fuego!!",
+        "Now, we have covered the fundamental concepts of TensorFlow -- Tensors, computation graphs, neural networks, and automatic differentiation. Congrats!!": "Ahora, hemos cubierto los conceptos fundamentales de TensorFlow -- Tensors, gráficos de cálculo, redes neuronales y diferenciación automática. ¡¡Felicitaciones!!",
+        
+        # Short phrases that appear frequently
+        "and we'll use it often.": "y la usaremos a menudo.",
+        "which hold data,": "que contienen datos,",
+        "in some order.": "en algún orden.",
+        "and higher-rank Tensors.": "y Tensors de rango superior.",
     }
 
 
@@ -625,16 +682,16 @@ def main():
     print("=" * 70)
     
     # Step 1: Reset notebooks to original state
-    print("\nStep 1: Resetting notebooks to original state...")
+    print("\nStep 1: Resetting notebooks to original English state from 2026 branch...")
     try:
         result = subprocess.run(
-            ['git', 'checkout', 'HEAD', '--', 'lab1/*.ipynb', 'lab1/solutions/*.ipynb'],
+            ['git', 'checkout', 'e44754e', '--', 'lab1/'],
             capture_output=True,
             text=True,
             cwd='/home/runner/work/introtodeeplearning_es-/introtodeeplearning_es-'
         )
         if result.returncode == 0:
-            print("  ✓ Notebooks reset successfully")
+            print("  ✓ Notebooks reset to original English successfully")
         else:
             print(f"  ⚠ Warning: {result.stderr}")
     except Exception as e:
