@@ -12,7 +12,7 @@ def create_dataloader(style):
     with open(os.path.join(cwd, f"data/text_styles/{style}.txt"), "r") as f:
         new_responses = [line.strip().replace("\\n", "\n") for line in f]
 
-    # Update the entire dataset at once with the new responses
+    # Actualizar todo el conjunto de datos a la vez con las nuevas respuestas
     ds_ = ds.select(range(len(new_responses)))
     ds_ = ds_.map(
         lambda x, idx: {"response_style": new_responses[idx]},
@@ -23,7 +23,7 @@ def create_dataloader(style):
     n = len(new_responses)
     ds_test = ds.select(range(n, n+n))
 
-    # Create a dataloader
+    # Crear un cargador de datos
     dataloader = DataLoader(ds_, batch_size=1, shuffle=True)
     dataloader_test = DataLoader(ds_test, batch_size=1, shuffle=True)
     return dataloader, dataloader_test
@@ -64,10 +64,10 @@ yoda_test_text = (
 # class Llama(LLMClient):
 #     def __init__(self, api_key: str):
 #         """
-#         Initialize the LlamaFree model client. 
+#         Inicializar el cliente del modelo LlamaFree. 
 
-#         LlamaFree is available from LlamaFree. 
-#         Provide your LlamaFree API key (`api_key`) to access.
+#         LlamaFree está disponible desde LlamaFree. 
+#         Proporciona tu clave API de LlamaFree (`api_key`) para acceder.
 #         """
 #         # super().__init__(model="meta-llama/llama-3.2-3b-instruct", api_key=api_key)
 #         super().__init__(model="meta-llama/llama-3.1-8b-instruct", api_key=api_key)
@@ -76,10 +76,10 @@ yoda_test_text = (
 # class LFM40B(LLMClient):
 #     def __init__(self, api_key: str):
 #         """
-#         Initialize the LFM-40B model client. 
+#         Inicializar el cliente del modelo LFM-40B. 
 
-#         LFM-40B is available from Lambda Labs. 
-#         Provide your Lambda Labs API key (`api_key`) to access.
+#         LFM-40B está disponible desde Lambda Labs. 
+#         Proporciona tu clave API de Lambda Labs (`api_key`) para acceder.
 #         """ 
 #         api_base = "https://api.lambdalabs.com/v1"
 #         super().__init__(model="lfm-40b", api_base=api_base, api_key=api_key)
