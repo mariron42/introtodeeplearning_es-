@@ -48,12 +48,12 @@ def plot_value_prediction(i, predictions_array, true_label):
 
 class TrainingDatasetLoader(object):
     def __init__(self, data_path, channels_last=True):
-        print("Opening {}".format(data_path))
+        print("Abriendo {}".format(data_path))
         sys.stdout.flush()
 
         self.cache = h5py.File(data_path, "r")
 
-        print("Loading data into memory...")
+        print("Cargando datos en memoria...")
         sys.stdout.flush()
         self.images = self.cache["images"][:]
         self.channels_last = channels_last
