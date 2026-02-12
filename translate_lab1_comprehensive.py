@@ -83,8 +83,11 @@ def get_comprehensive_translations():
         "### 2.6.3 Play back generated songs": "### 2.6.3 Reproducir las canciones generadas",
         
         # ========== INTRODUCTION PARAGRAPHS ==========
+        "In this lab, you'll get exposure to using TensorFlow and learn how it can be used for solving deep learning tasks.": "En este laboratorio, obtendrás experiencia usando TensorFlow y aprenderás cómo se puede usar para resolver tareas de aprendizaje profundo.",
+        "In this lab, you'll get exposure to using PyTorch and learn how it can be used for deep learning.": "En este laboratorio, obtendrás experiencia usando PyTorch y aprenderás cómo se puede usar para aprendizaje profundo.",
         "In this lab, you'll get exposure to using": "En este laboratorio, obtendrás experiencia usando",
         "and learn how it can be used for deep learning.": "y aprenderás cómo se puede usar para aprendizaje profundo.",
+        "and learn how it can be used for solving deep learning tasks.": "y aprenderás cómo se puede usar para resolver tareas de aprendizaje profundo.",
         "Go through the code and run each cell.": "Revisa el código y ejecuta cada celda.",
         "Along the way, you'll encounter several": "En el camino, encontrarás varios bloques",
         "blocks -- follow the instructions to fill them out before running those cells and continuing.": "-- sigue las instrucciones para completarlos antes de ejecutar esas celdas y continuar.",
@@ -164,6 +167,7 @@ def get_comprehensive_translations():
         "and": "y",
         "as before.": "como antes.",
         "Let's test this behavior:": "Probemos este comportamiento:",
+        "using": "usando",
         "and access them for computation. We define the simple function": "y acceder a ellos para cálculo. Definimos la función simple",
         "and compute the gradient:": "y calculamos el gradiente:",
         
@@ -230,6 +234,7 @@ def get_comprehensive_translations():
         "When a forward pass is made through the network, all forward-pass operations get recorded to a \"tape\"; then, to compute the gradient, the tape is played backwards. By default, the tape is discarded after it is played backwards; this means that a particular": "Cuando se realiza un paso hacia adelante a través de la red, todas las operaciones de paso hacia adelante se registran en una \"cinta\"; luego, para calcular el gradiente, la cinta se reproduce hacia atrás. Por defecto, la cinta se descarta después de reproducirse hacia atrás; esto significa que una",
         "instance can only compute one gradient, and subsequent calls throw a runtime error.": "instancia particular solo puede calcular un gradiente, y las llamadas posteriores generan un error de tiempo de ejecución.",
         
+        "First, we will look at how we can compute gradients using GradientTape and access them for computation. We define the simple function": "Primero, veremos cómo podemos calcular gradientes usando GradientTape y acceder a ellos para cálculo. Definimos la función simple",
         "First, we will look at how we can compute gradients using": "Primero, veremos cómo podemos calcular gradientes usando",
         "and then put it all together to build a neural network": "y luego juntarlo todo para construir una red neuronal",
         "and train it.": "y entrenarla.",
@@ -263,6 +268,8 @@ def get_comprehensive_translations():
         "You will need to generate a new personal API Key. Enter this API key as the global variable": "Necesitarás generar una nueva clave API personal. Ingresa esta clave API como la variable global",
         
         # Dataset
+        "thousands of Irish folk songs": "miles de canciones folclóricas irlandesas",
+        "thousands of Irish": "miles de canciones folclóricas irlandesas",
         "We've gathered a dataset of thousands of Irish folk songs, represented in the ABC notation. Let's download the dataset": "Hemos recopilado un conjunto de datos de miles de canciones folclóricas irlandesas, representadas en la notación ABC. Descarguemos el conjunto de datos",
         "inspect it:": "inspeccionémoslo:",
         
@@ -271,6 +278,8 @@ def get_comprehensive_translations():
         "Be patient for this conversion to run, it can take some time!": "¡Ten paciencia para que se ejecute esta conversión, puede tomar algo de tiempo!",
         
         # Character encoding
+        "the notes being played": "las notas que se están tocando",
+        "being played": "están tocando",
         "One important thing to think about is that this notation of music does not simply contain information on the notes being played, but also encompasses information on the rhythm and tempo.": "Una cosa importante a tener en cuenta es que esta notación de música no solo contiene información sobre las notas que se están tocando, sino que también abarca información sobre el ritmo y el tempo.",
         "One important thing to think about is that this notation of music does not simply contain information on the notes being played, but additionally there is meta information such as the song title, key,": "Una cosa importante a tener en cuenta es que esta notación de música no solo contiene información sobre las notas que se están tocando, sino que también hay metainformación como el título de la canción, clave,",
         "tempo.": "tempo.",
@@ -455,6 +464,19 @@ def translate_text(text, translations):
     
     for eng_text, spa_text in sorted_translations:
         result = result.replace(eng_text, spa_text)
+    
+    # Post-processing: fix common typos from partial replacements
+    typo_fixes = {
+        'usyo': 'usando',
+        'irlyesas': 'irlandesas',
+        'tocyo': 'tocando',
+        'Desglosyo': 'Desglosando',
+        'solucións': 'soluciones',
+        'tratyo': 'tratando',
+    }
+    
+    for typo, correct in typo_fixes.items():
+        result = result.replace(typo, correct)
     
     return result
 
