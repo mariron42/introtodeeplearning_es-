@@ -122,10 +122,10 @@ def get_comprehensive_translations():
         "The shape of a TensorFlow": "La forma de un",
         "The shape of a": "La forma de un",
         "tensor defines its number of dimensions and the size of each dimension.": "tensor define su número de dimensiones y el tamaño de cada dimensión.",
-        "tensor provides the number of dimensions": "tensor proporciona el número de dimensiones",
+        
+        "tensor provides the number of dimensions": "tensor proporciona el número de elementos",
         "this is equivalent to the tensor's rank": "esto es equivalente al rango del tensor",
         "and you can also think of this as the tensor's order or degree.": "y también puedes pensar en esto como el orden o grado del tensor.",
-        "tensor define su número de dimensiones y el tamaño de cada dimensión.": "tensor define su número de dimensiones y el tamaño de cada dimensión.",
         
         # ========== CREATING TENSORS ==========
         "Let's start by creating some tensors and inspecting their properties:": "Comencemos creando algunos tensores e inspeccionando sus propiedades:",
@@ -136,7 +136,6 @@ def get_comprehensive_translations():
         "Next, let's create": "A continuación, vamos a crear",
         "Next we consider creating 2-d (i.e., matrices)": "A continuación consideramos crear tensores 2-d (es decir, matrices)",
         "and higher-rank tensors.": "y tensores de rango superior.",
-        "y tensores de rango superior.": "y tensores de rango superior.",
         
         # Image processing
         "In image processing and computer vision, we will use 4-d Tensors with dimensions corresponding to batch size, number of color channels, image height, and image width.": "En procesamiento de imágenes y visión por computadora, usaremos tensores 4-d con dimensiones correspondientes al tamaño del lote, número de canales de color, altura de imagen y ancho de imagen.",
@@ -421,6 +420,15 @@ def get_comprehensive_translations():
         "Backward pass": "Paso hacia atrás",
         "Update the parameters": "Actualizar los parámetros",
         
+        # Common phrases
+        "random": "aleatorio",
+        "randomly": "aleatoriamente",
+        "Note that parameter initialization is random!": "¡Ten en cuenta que la inicialización de parámetros es aleatoria!",
+        "Note that the parameter initialize is random!": "¡Ten en cuenta que la inicialización de parámetros es aleatoria!",
+        "Since layer parameters are initialized randomly, we will set a random seed for reproducibility": "Dado que los parámetros de la capa se inicializan aleatoriamente, estableceremos una semilla aleatoria para reproducibilidad",
+        "Initialize a random value for our intial x": "Inicializar un valor aleatorio para nuestra x inicial",
+        "Initialize a random value for our initial x": "Inicializar un valor aleatorio para nuestra x inicial",
+        
         # ========== TODO BLOCKS ==========
         "TODO": "HACER",
         "Defining higher-order Tensors": "Definiendo tensores de orden superior",
@@ -468,11 +476,14 @@ def translate_text(text, translations):
     # Post-processing: fix common typos from partial replacements
     typo_fixes = {
         'usyo': 'usando',
+        'Usyo': 'Usando',
         'irlyesas': 'irlandesas',
         'tocyo': 'tocando',
         'Desglosyo': 'Desglosando',
         'solucións': 'soluciones',
         'tratyo': 'tratando',
+        'ryom': 'aleatoria',
+        'ryomly': 'aleatoriamente',
     }
     
     for typo, correct in typo_fixes.items():
