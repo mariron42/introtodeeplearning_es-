@@ -1,13 +1,13 @@
-# MIT 6.S191 Lab 1: Intro to Deep Learning in Python and Music Generation with RNNs
+# MIT 6.S191 Laboratorio 1: Introducción al Aprendizaje Profundo en Python y Generación de Música con RNNs
 
 ![alt text](https://github.com/MITDeepLearning/introtodeeplearning/raw/master/lab1/img/music_waveform.png)
-## Part 1: Intro to Deep Learning in Python -- TensorFlow and PyTorch
-TensorFlow ("TF") and PyTorch ("PT") are software libraries used in machine learning. Here we'll learn how computations are represented and how to define simple neural networks in TensorFlow and PyTorch. The TensorFlow labs will be prefixed by `TF`; PyTorch labs will be prefixed by `PT`.
+## Parte 1: Introducción al Aprendizaje Profundo en Python -- TensorFlow y PyTorch
+TensorFlow ("TF") y PyTorch ("PT") son bibliotecas de software utilizadas en aprendizaje automático. Aquí aprenderemos cómo se representan los cómputos y cómo definir redes neuronales simples en TensorFlow y PyTorch. Los laboratorios de TensorFlow tendrán el prefijo `TF`; los laboratorios de PyTorch tendrán el prefijo `PT`.
 
-TensorFlow uses a high-level API called [Keras](https://www.tensorflow.org/guide/keras) that provides a powerful, intuitive framework for building and training deep learning models. In the TensorFlow Intro (`TF_Part1_Intro`) you will learn the basics of computations in TensorFlow, the Keras API, and TensorFlow 2.0's imperative execution style.
+TensorFlow utiliza una API de alto nivel llamada [Keras](https://www.tensorflow.org/guide/keras) que proporciona un framework poderoso e intuitivo para construir y entrenar modelos de aprendizaje profundo. En la Introducción a TensorFlow (`TF_Part1_Intro`) aprenderás los fundamentos de los cómputos en TensorFlow, la API de Keras y el estilo de ejecución imperativa de TensorFlow 2.0.
 
-[PyTorch](https://pytorch.org/) is a popular deep learning library known for its flexibility, ease of use, and dynamic execution. In the PyTorch Intro (`PT_Part1_Intro`) you will learn the basics of computations in PyTorch and how to define neural networks using either the sequential API and `torch.nn.Module`.
+[PyTorch](https://pytorch.org/) es una biblioteca de aprendizaje profundo popular conocida por su flexibilidad, facilidad de uso y ejecución dinámica. En la Introducción a PyTorch (`PT_Part1_Intro`) aprenderás los fundamentos de los cómputos en PyTorch y cómo definir redes neuronales utilizando tanto la API secuencial como `torch.nn.Module`.
 
-## Part 2: Music Generation with RNNs
-In the second portion of the lab, we will play around with building a Recurrent Neural Network (RNN) for music generation. We will be using a "character RNN" to predict the next character of sheet music in ABC notation. Finally, we will sample from this model to generate a brand new music file that has never been heard before!
+## Parte 2: Generación de Música con RNNs
+En la segunda parte del laboratorio, experimentaremos con la construcción de una Red Neuronal Recurrente (RNN) para la generación de música. Utilizaremos una "RNN de caracteres" para predecir el siguiente carácter de partituras musicales en notación ABC. Finalmente, tomaremos muestras de este modelo para generar un archivo de música completamente nuevo que nunca antes se haya escuchado.
 
