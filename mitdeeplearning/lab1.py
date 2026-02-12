@@ -22,7 +22,7 @@ def extract_song_snippet(text):
     pattern = "(^|\n\n)(.*?)\n\n"
     search_results = re.findall(pattern, text, overlapped=True, flags=re.DOTALL)
     songs = [song[1] for song in search_results]
-    print("Found {} songs in text".format(len(songs)))
+    print("Se encontraron {} canciones en el texto".format(len(songs)))
     return songs
 
 
@@ -46,7 +46,7 @@ def play_wav(wav_file):
 def play_song(song):
     basename = save_song_to_abc(song)
     ret = abc2wav(basename + ".abc")
-    if ret == 0:  # did not suceed
+    if ret == 0:  # no tuvo éxito
         return play_wav(basename + ".wav")
     return None
 
@@ -55,25 +55,25 @@ def play_generated_song(generated_text):
     songs = extract_song_snippet(generated_text)
     if len(songs) == 0:
         print(
-            "No valid songs found in generated text. Try training the \
-            model longer or increasing the amount of generated music to \
-            ensure complete songs are generated!"
+            "No se encontraron canciones válidas en el texto generado. \
+            ¡Intenta entrenar el modelo por más tiempo o aumentar la cantidad de música \
+            generada para asegurar que se generen canciones completas!"
         )
 
     for song in songs:
         play_song(song)
     print(
-        "None of the songs were valid, try training longer to improve \
-        syntax."
+        "Ninguna de las canciones fue válida, intenta entrenar por más tiempo para \
+        mejorar la sintaxis."
     )
 
 
 def test_batch_func_types(func, args):
     ret = func(*args)
-    assert len(ret) == 2, "[FAIL] get_batch must return two arguments (input and label)"
-    assert type(ret[0]) == np.ndarray, "[FAIL] test_batch_func_types: x is not np.array"
-    assert type(ret[1]) == np.ndarray, "[FAIL] test_batch_func_types: y is not np.array"
-    print("[PASS] test_batch_func_types")
+    assert len(ret) == 2, "[FALLO] get_batch debe devolver dos argumentos (entrada y etiqueta)"
+    assert type(ret[0]) == np.ndarray, "[FALLO] test_batch_func_types: x no es np.array"
+    assert type(ret[1]) == np.ndarray, "[FALLO] test_batch_func_types: y no es np.array"
+    print("[APROBADO] test_batch_func_types")
     return True
 
 
@@ -83,15 +83,15 @@ def test_batch_func_shapes(func, args):
     correct = (batch_size, seq_length)
     assert (
         x.shape == correct
-    ), "[FAIL] test_batch_func_shapes: x {} is not correct shape {}".format(
+    ), "[FALLO] test_batch_func_shapes: x {} no tiene la forma correcta {}".format(
         x.shape, correct
     )
     assert (
         y.shape == correct
-    ), "[FAIL] test_batch_func_shapes: y {} is not correct shape {}".format(
+    ), "[FALLO] test_batch_func_shapes: y {} no tiene la forma correcta {}".format(
         y.shape, correct
     )
-    print("[PASS] test_batch_func_shapes")
+    print("[APROBADO] test_batch_func_shapes")
     return True
 
 
@@ -99,27 +99,27 @@ def test_batch_func_next_step(func, args):
     x, y = func(*args)
     assert (
         x[:, 1:] == y[:, :-1]
-    ).all(), "[FAIL] test_batch_func_next_step: x_{t} must equal y_{t-1} for all t"
-    print("[PASS] test_batch_func_next_step")
+    ).all(), "[FALLO] test_batch_func_next_step: x_{t} debe ser igual a y_{t-1} para todo t"
+    print("[APROBADO] test_batch_func_next_step")
     return True
 
 
 def test_custom_dense_layer_output(y):
-    # define the ground truth value for the array
+    # definir el valor de referencia (ground truth) para el arreglo
     true_y = np.array([[0.27064407, 0.1826951, 0.50374055]], dtype="float32")
     assert tf.shape(y).numpy().tolist() == list(
         true_y.shape
-    ), "[FAIL] output is of incorrect shape. expected {} but got {}".format(
+    ), "[FALLO] la salida tiene una forma incorrecta. se esperaba {} pero se obtuvo {}".format(
         true_y.shape, y.numpy().shape
     )
     np.testing.assert_almost_equal(
         y.numpy(),
         true_y,
         decimal=7,
-        err_msg="[FAIL] output is of incorrect value. expected {} but got {}".format(
+        err_msg="[FALLO] la salida tiene un valor incorrecto. se esperaba {} pero se obtuvo {}".format(
             true_y, y.numpy()
         ),
         verbose=True,
     )
-    print("[PASS] test_custom_dense_layer_output")
+    print("[APROBADO] test_custom_dense_layer_output")
     return True
