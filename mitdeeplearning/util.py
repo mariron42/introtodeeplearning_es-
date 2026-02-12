@@ -13,13 +13,13 @@ def display_model(model):
 
 
 def plot_sample(x, y, vae, backend='tf'):
-    """Plot original and reconstructed images side by side.
+    """Graficar imágenes originales y reconstruidas lado a lado.
     
     Args:
-        x: Input images array of shape [B, H, W, C] (TF) or [B, C, H, W] (PT)
-        y: Labels array of shape [B] where 1 indicates a face
-        vae: VAE model (TensorFlow or PyTorch)
-        framework: 'tf' or 'pt' indicating which framework to use
+        x: Arreglo de imágenes de entrada con forma [B, H, W, C] (TF) o [B, C, H, W] (PT)
+        y: Arreglo de etiquetas con forma [B] donde 1 indica un rostro
+        vae: Modelo VAE (TensorFlow o PyTorch)
+        framework: 'tf' o 'pt' indicando qué framework usar
     """
     plt.figure(figsize=(2, 1))
 
@@ -104,7 +104,7 @@ class PeriodicPlotter:
 
 
 def create_grid_of_images(xs, size=(5, 5)):
-    """Combine a list of images into a single image grid by stacking them into an array of shape `size`"""
+    """Combinar una lista de imágenes en una única cuadrícula de imágenes apilándolas en un arreglo de forma `size`"""
 
     grid = []
     counter = 0
