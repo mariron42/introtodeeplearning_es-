@@ -20,11 +20,11 @@ def play_video(filename, width=None):
 
 
 def preprocess_pong(image):
-    I = image[35:195]  # Crop
-    I = I[::2, ::2, 0]  # Downsample width and height by a factor of 2
-    I[I == 144] = 0  # Remove background type 1
-    I[I == 109] = 0  # Remove background type 2
-    I[I != 0] = 1  # Set remaining elements (paddles, ball, etc.) to 1
+    I = image[35:195]  # Recortar
+    I = I[::2, ::2, 0]  # Reducir el ancho y alto por un factor de 2
+    I[I == 144] = 0  # Eliminar fondo tipo 1
+    I[I == 109] = 0  # Eliminar fondo tipo 2
+    I[I != 0] = 1  # Establecer los elementos restantes (paletas, pelota, etc.) en 1
     I = cv2.dilate(I, np.ones((3, 3), np.uint8), iterations=1)
     I = I[::2, ::2, np.newaxis]
     return I.astype(np.float)
@@ -42,13 +42,13 @@ class Memory:
     def __init__(self):
         self.clear()
 
-    # Resets/restarts the memory buffer
+    # Reinicia/restablece el búfer de memoria
     def clear(self):
         self.observations = []
         self.actions = []
         self.rewards = []
 
-    # Add observations, actions, rewards to memory
+    # Agregar observaciones, acciones y recompensas a la memoria
     def add_to_memory(self, new_observation, new_action, new_reward):
         self.observations.append(new_observation)
         self.actions.append(new_action)
@@ -68,7 +68,7 @@ def aggregate_memories(memories):
 def parallelized_collect_rollout(batch_size, envs, model, choose_action):
     assert (
         len(envs) == batch_size
-    ), "Number of parallel environments must be equal to the batch size."
+    ), "El número de entornos paralelos debe ser igual al tamaño del lote."
 
     memories = [Memory() for _ in range(batch_size)]
     next_observations = [single_env.reset() for single_env in envs]
@@ -144,7 +144,7 @@ def save_video_of_model(model, env_name, suffix=""):
         counter += 1
 
     output_video.close()
-    print("Successfully saved {} frames into {}!".format(counter, filename))
+    print("¡Se guardaron exitosamente {} fotogramas en {}!".format(counter, filename))
     return filename
 
 
