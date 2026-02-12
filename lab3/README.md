@@ -1,6 +1,6 @@
-# MIT 6.S191 Lab 3: Fine-Tune an LLM, You Must!
+# MIT 6.S191 Laboratorio 3: ¡Ajustar un LLM, debes!
 
 ![yoda](https://github.com/MITDeepLearning/introtodeeplearning/raw/2025/lab3/img/yoda_wallpaper.jpg)
-In this lab, you will fine-tune a multi-billion parameter large language model (LLM). We will go through several fundamental concepts of LLMs, including tokenization, templates, and fine-tuning. This lab provides a complete pipeline for fine-tuning a language model to generate responses in a specific style, and you will explore not only language model fine-tuning, but also ways to evaluate the performance of a language model.
+En este laboratorio, realizarás el ajuste fino (fine-tuning) de un modelo de lenguaje grande (LLM) de varios miles de millones de parámetros. Recorreremos varios conceptos fundamentales de los LLMs, incluyendo tokenización, plantillas y ajuste fino (fine-tuning). Este laboratorio proporciona un pipeline completo para el ajuste fino de un modelo de lenguaje para generar respuestas en un estilo específico, y explorarás no solo el ajuste fino de modelos de lenguaje, sino también formas de evaluar el rendimiento de un modelo de lenguaje.
 
-You will use [Liquid AI's](https://www.liquid.ai/) [LFM2-1.2B](https://www.liquid.ai/liquid-foundation-models) model as the base language model to fine-tune; Google's [Gemini 2.5](https://huggingface.co/google/gemma-2b-it) as an evaluation "judge" model; and Comet ML's [Opik](https://www.comet.com/site/products/opik/) as a framework for streamlined LLM evaluation.
+Utilizarás el modelo [LFM2-1.2B](https://www.liquid.ai/liquid-foundation-models) de [Liquid AI](https://www.liquid.ai/) como modelo de lenguaje base para el ajuste fino; [Gemini 2.5](https://huggingface.co/google/gemma-2b-it) de Google como modelo "juez" de evaluación; y [Opik](https://www.comet.com/site/products/opik/) de Comet ML como marco para la evaluación simplificada de LLMs.
