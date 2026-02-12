@@ -511,6 +511,39 @@ def get_comprehensive_translations():
         "which hold data,": "que contienen datos,",
         "in some order.": "en algún orden.",
         "and higher-rank Tensors.": "y Tensors de rango superior.",
+        
+        # ========== ADDITIONAL NEURAL NETWORK TRANSLATIONS ==========
+        
+        # PyTorch specific long phrases
+        "PyTorch uses": "PyTorch usa",
+        ", which serves as a base class for all neural network modules in PyTorch and thus provides a framework for building neural networks.": ", que sirve como clase base para todos los módulos de redes neuronales en PyTorch y así proporciona un marco para construir redes neuronales.",
+        " (or Layers) ": " (o Capas) ",
+        "that are commonly used in neural networks, for example a": "que se usan comúnmente en redes neuronales, por ejemplo una",
+        
+        # Testing outputs
+        "Now, let's test the output of our layer.": "Ahora, probemos la salida de nuestra capa.",
+        "We've defined our model using the Sequential API. Now, we can test it out using an example input:": "Hemos definido nuestro modelo usando la API Sequential. Ahora, podemos probarlo usando una entrada de ejemplo:",
+        
+        # Subclassing
+        "With PyTorch, we can create more flexible models by subclassing": "Con PyTorch, podemos crear modelos más flexibles heredando de",
+        ". The `nn.Module` class allows us to group layers together flexibly to define new architectures.": ". La clase `nn.Module` nos permite agrupar capas de manera flexible para definir nuevas arquitecturas.",
+        "As we saw earlier with `OurDenseLayer`, we can subclass `nn.Module` to create a class for our model, and then define the forward pass by calling the different layers on the input.": "Como vimos anteriormente con `NuestraCapaDensa`, podemos heredar de `nn.Module` para crear una clase para nuestro modelo, y luego definir el paso hacia adelante llamando a las diferentes capas en la entrada.",
+        
+        # Flexibility
+        "Importantly, `nn.Module` affords us a lot of flexibility to define custom models. For example, we can use boolean arguments in the `forward` function to specify different network behaviors, for example different behaviors during training and inference. Let's suppose under some instances we want our network to return a probability distribution over the outputs, and under other instances we want to return the most probable output. To do this we can define a boolean argument that specifies this behavior:": "Es importante destacar que `nn.Module` nos ofrece mucha flexibilidad para definir modelos personalizados. Por ejemplo, podemos usar argumentos booleanos en la función `forward` para especificar diferentes comportamientos de red, por ejemplo diferentes comportamientos durante el entrenamiento y la inferencia. Supongamos que en algunas instancias queremos que nuestra red devuelva una distribución de probabilidad sobre las salidas, y en otras instancias queremos devolver la salida más probable. Para hacer esto podemos definir un argumento booleano que especifique este comportamiento:",
+        
+        # Ready for training
+        "Now that we have learned how to define layers and models in PyTorch using both the Sequential API and subclassing `nn.Module`, we're ready to turn our attention to how to actually implement network training with backpropagation.": "Ahora que hemos aprendido cómo definir capas y modelos en PyTorch usando tanto la API Sequential como heredando de `nn.Module`, estamos listos para dirigir nuestra atención a cómo implementar realmente el entrenamiento de redes con retropropagación.",
+        
+        # Automatic differentiation
+        "In PyTorch,": "En PyTorch,",
+        " is used for ": " se usa para ",
+        ", which is critical for training deep learning models with": ", que es crítica para entrenar modelos de aprendizaje profundo con",
+        ". PyTorch uses a reverse-mode automatic differentiation system called autograd.": ". PyTorch usa un sistema de diferenciación automática en modo inverso llamado autograd.",
+        
+        # Training with gradients
+        "In training neural networks, we use differentiation and stochastic gradient descent (SGD) to optimize a loss function. Now that we have a sense of how PyTorch's autograd can be used to compute and access derivatives, we will look at an example where we use automatic differentiation and SGD to find the minimum of": "En el entrenamiento de redes neuronales, usamos diferenciación y descenso de gradiente estocástico (SGD) para optimizar una función de pérdida. Ahora que tenemos una idea de cómo se puede usar autograd de PyTorch para calcular y acceder a derivadas, veremos un ejemplo donde usamos diferenciación automática y SGD para encontrar el mínimo de",
+        
     }
 
 
